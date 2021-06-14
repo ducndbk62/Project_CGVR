@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
         audioSource = gameObject.GetComponent<AudioSource>();
         audioSource.clip = idleSound;
         audioSource.Play();
+        audioSource.volume = 0.2f;
     }
 
     // Update is called once per frame
@@ -49,8 +50,6 @@ public class PlayerMovement : MonoBehaviour
             audioSource.clip = moveSound;
             audioSource.Play();
             transform.Translate(Vector3.back * tankSpeed * Time.deltaTime);
-        }
-       // else audioSource.clip = idleSound;
-       
+        }  
     }
 }

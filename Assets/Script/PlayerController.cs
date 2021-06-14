@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public int hP;
-    public int score;
     public GameObject playerTank;
     public GameObject tankExplosion;
     public Slider hPBar;
 
     private int currentHP;
+    private GameObject gameController;
 
     // Start is called before the first frame update
     void Start()
@@ -20,13 +20,13 @@ public class PlayerController : MonoBehaviour
         hPBar.maxValue = hP;
         hPBar.value = currentHP;
         hPBar.minValue = 0;
+        gameController = GameObject.FindGameObjectWithTag("GameController");
     }
 
     public void GetHit(int damage)
     {
         currentHP -= damage;
         hPBar.value = currentHP;
-        Debug.Log("hit player: " + hP);
 
         if (currentHP <= 0) Dead();
     }
@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     {
         Instantiate(tankExplosion, gameObject.transform.position, Quaternion.identity);
         Destroy(playerTank);
+        gameController.GetComponent<GameController>().EndGame();
     }
 
     // Update is called once per frame

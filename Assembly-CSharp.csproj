@@ -59,6 +59,7 @@
      <Compile Include="Assets\Script\EnemyController.cs" />
      <Compile Include="Assets\Script\EnemyGunRotation.cs" />
      <Compile Include="Assets\Script\EnemyMovement.cs" />
+     <Compile Include="Assets\Script\GameController.cs" />
      <Compile Include="Assets\Script\MainMenu.cs" />
      <Compile Include="Assets\Script\PlayerController.cs" />
      <Compile Include="Assets\Script\PlayerFireController.cs" />
@@ -66,15 +67,8 @@
      <Compile Include="Assets\Script\PlayerMovement.cs" />
      <Compile Include="Assets\Script\ShellExplosion.cs" />
      <Compile Include="Assets\Script\SpawnEnemy.cs" />
+     <Compile Include="Assets\Script\SwapCam.cs" />
      <Compile Include="Assets\Script\TracksAnimation.cs" />
-     <Compile Include="Assets\Scripts\Camera\CameraControl.cs" />
-     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
-     <Compile Include="Assets\Scripts\Managers\TankManager.cs" />
-     <Compile Include="Assets\Scripts\Tank\TankHealth.cs" />
-     <Compile Include="Assets\Scripts\Tank\TankMovement.cs" />
-     <Compile Include="Assets\Scripts\Tank\TankShooting.cs" />
-     <Compile Include="Assets\Scripts\UI\UIDirectionControl.cs" />
-     <None Include="Assets\Shader\V.shader" />
      <None Include="Assets\Tanks!_Third-PartyNotice.txt" />
  <Reference Include="UnityEngine">
  <HintPath>E:/Unity/2019.4.13f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -616,6 +610,9 @@
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>E:/project3/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Cinemachine">
+ <HintPath>E:/project3/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+ </Reference>
  <Reference Include="com.unity.multiplayer-hlapi.Editor">
  <HintPath>E:/project3/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
  </Reference>
@@ -657,6 +654,9 @@
  </Reference>
  <Reference Include="UnityEditor.SpatialTracking">
  <HintPath>E:/project3/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
+ </Reference>
+ <Reference Include="com.unity.cinemachine.editor">
+ <HintPath>E:/project3/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.SpatialTracking">
  <HintPath>E:/project3/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>

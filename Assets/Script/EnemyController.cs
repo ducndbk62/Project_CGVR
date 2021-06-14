@@ -17,10 +17,13 @@ public class EnemyController : MonoBehaviour
     public AudioClip shootSound;
     private AudioSource fireAuSource;
 
+    private GameObject gameController;
     public float fireTime;
     private float lastFireTime;
 
     private Vector3 fireDirection;
+    private float minFireTime = 3.0f;
+    private float maxFireTime = 6.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +34,8 @@ public class EnemyController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         UpdateFireTime();
         RotateGun();
+
+        gameController = GameObject.FindGameObjectWithTag("GameController");
     }
 
     public void GetHit(int damage)
@@ -45,12 +50,21 @@ public class EnemyController : MonoBehaviour
     {
         Instantiate(tankExplosion, gameObject.transform.position, Quaternion.identity);
         Destroy(gameObject);
+        gameController.GetComponent<GameController>().GetPoint(1);
     }
 
     void UpdateFireTime()
     {
         lastFireTime = Time.time;
-        fireTime = Random.Range(2.0f, 5.0f);
+        if (minFireTime > 1)
+        {
+            if ((System.Math.Truncate(Time.time) + 1) % 5 == 0)
+            {
+                minFireTime /= 2;
+                maxFireTime /= 2;
+            }
+        }
+        fireTime = Random.Range(minFireTime, maxFireTime);
     }
 
     void RotateGun()

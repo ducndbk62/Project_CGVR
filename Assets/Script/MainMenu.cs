@@ -5,11 +5,9 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    public Text scoreText;
     public GameObject UI_MainMenu;
 
     public GameObject UI_Setting;
-    public GameObject UI_HighScore;
     public GameObject UI_About;
     public Slider slider;
 
@@ -31,7 +29,6 @@ public class MainMenu : MonoBehaviour
     public void Back()
     {
         UI_About.SetActive(false);
-        UI_HighScore.SetActive(false);
         UI_Setting.SetActive(false);
 
         UI_MainMenu.SetActive(true);
@@ -52,10 +49,5 @@ public class MainMenu : MonoBehaviour
     public void SettingAudio()
     {
         AudioListener.volume = slider.value;
-    }
-
-    public void Reset()
-    {
-        PlayerPrefs.SetInt("score", 0);
     }
 }

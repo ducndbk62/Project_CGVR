@@ -11,7 +11,7 @@ public class PlayerFireController : MonoBehaviour
     private AudioSource fireAuSource;
     public float gunSize;
 
-    public float fireTime = 0.3f;
+    public float fireTime = 0.2f;
     private float lastFireTime = 0;
 
     // Start is called before the first frame update

@@ -25,7 +25,6 @@ public class PlayerGunRotation : MonoBehaviour
                 Vector3 look = hitPoint - transform.position;
                 transform.rotation = Quaternion.LookRotation(look, Vector3.up);
             }
-        }
-            
+        }            
     }
 }
